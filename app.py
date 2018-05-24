@@ -11,8 +11,6 @@ class myHandler(BaseHTTPRequestHandler):
 		self.send_response(200)
 		self.send_header('Content-type','image/png')
 		self.end_headers()
-		#f = open(curdir + sep + 'logo.png')
-		#self.wfile.write(f.read())
 		with open(curdir + sep + 'logo.png', 'rb') as file:
 			self.wfile.write(file.read())
 
