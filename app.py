@@ -1,5 +1,5 @@
 #!/usr/bin/python
-from BaseHTTPServer import BaseHTTPRequestHandler,HTTPServer
+from http.server import BaseHTTPRequestHandler,HTTPServer
 from os import curdir,sep
 
 PORT_NUMBER = 8080
@@ -17,7 +17,7 @@ class myHandler(BaseHTTPRequestHandler):
 
 try:
 	server = HTTPServer(('', PORT_NUMBER), myHandler)
-	print 'Started httpserver on port ' , PORT_NUMBER
+	print('Started httpserver on port ' , PORT_NUMBER)
 	server.serve_forever()
 
 except KeyboardInterrupt:
